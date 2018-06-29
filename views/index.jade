@@ -1,0 +1,43 @@
+extends layout
+
+block style
+  link(rel='stylesheet', href='/stylesheets/index.css')
+block content
+  div.container
+    div.row
+      div.col-xs-12.col-md-6
+        div.section
+          input.nickname(type='text',placeHolder='请输入用户昵称')
+        div.section
+          input.avatarUrl(type='text',placeHolder='请输入用户头像地址')
+        div.section
+          input.country(type='text',placeHolder='请输入用户国籍')
+        div.section
+          input.province(type='text',placeHolder='请输入用户省份')
+        div.section
+          input.city(type='text',placeHolder='请输入用户城市')
+        div.section
+          input.gender(type='number',placeHolder='请输入用户性别')
+        div.btnArea
+          button.btnSubmit='提交'
+          button.btnResearch(data-openid='0')='查找'
+        div.resultPanel
+      div.col-xs-12.col-md-6
+        div.section
+          textarea.suggestion(placeHolder='请输入反馈内容')
+        div.btnArea
+          button.btnSubmit2='提交反馈内容'
+          button.btnSubmit3='创建企业名片'
+          button.btnSubmit4='企业名片详情'
+          button.btnSubmit5='我创建的'
+          button.btnSubmit6='收藏'
+          button.btnSubmit7='收藏列表'
+          button.btnSubmit8='首页列表'
+          button.btnSubmit9='查看企业名片'
+        div.resultPanel2
+
+  block script
+  script(type="text/javascript", src="jquery-3.2.0.min.js")
+  script(type="text/javascript", src="index.js")
+
+

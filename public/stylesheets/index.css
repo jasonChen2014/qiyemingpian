@@ -1,0 +1,39 @@
+.section{
+	width: 80%;
+	margin:0 auto;
+	margin-top: 10px;
+}
+.section input{
+	width: 100%;
+	height: 30px;
+}
+.btnArea{
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.btnArea button{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	color: #fff;
+	background: #57a9bd;
+	border:none;
+	border-radius: 3px;
+	margin-top: 20px;
+}
+.resultPanel,.resultPanel2{
+	width: 80%;
+	height: 200px;
+	border:1px solid #ddd;
+	padding: 12px;
+	box-sizing: border-box;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.suggestion{
+	width: 100%;
+	margin: 0 auto;
+	height: 60px;
+}
