@@ -58,8 +58,8 @@ router.get('/get_openid',function(req, res, next) {
 		return;
 	}
     //常量可以使用一个模块统一管理
-    var appid = 'wxcb3d9a1894fefb2e';
-    var secret = '719760d9d591aa8a4d905be3d2bb6598';
+    var appid = '小程序appid';
+    var secret = '小程序secret';
     var wx_url = 'https://api.weixin.qq.com/sns/jscode2session?appid='+appid+'&secret='+secret+'&js_code='+code+'&grant_type=authorization_code';
     superagent.get(wx_url).end(function(err,sres){
     	if(err) {
