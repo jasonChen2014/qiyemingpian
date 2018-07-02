@@ -5,7 +5,13 @@ var URL = require('url');
 var mysql = require('mysql');
 //创建连接
 //被自己蠢哭了。。。
-var connection = mysql.createConnection('mysql://zuv4mhvs0zr2eaa0:password@o677vxfi8ok6exrd.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/nxnbkp5g4lsyl88q');
+var connection = mysql.createConnection('mysql://*********:*********@o677vxfi8ok6exrd.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/nxnbkp5g4lsyl88q');
+// var connection = mysql.createConnection({
+//     host     : 'localhost',
+//     user     : '*********',
+//     password : '*********',
+//     database : 'qiyemingpian'
+// });
 //执行创建连接 
 connection.connect();
 //SQL语句

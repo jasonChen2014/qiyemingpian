@@ -2,21 +2,21 @@ var express = require('express');
 var router = express.Router();
 var URL = require('url');
 var path = require('path');
-var superagent = require('superagent');
+var superagent = require('superagent');//调用远程接口
 var fs = require("fs");//操作文件
-var multer  = require('multer');
-var upload = multer({ dest: './public/upload/images'});
-var eventproxy = require('eventproxy');
+var multer  = require('multer');//文件上传中间件
+var upload = multer({ dest: './public/upload/images'});//定义图片上传的临时目录
+var eventproxy = require('eventproxy');//异步控制-eventproxy
 //加载mysql模块
 var mysql = require('mysql');
 //创建连接
 //终于连上去了，想哭。。。
-var connection = mysql.createConnection('mysql://zuv4mhvs0zr2eaa0:password@o677vxfi8ok6exrd.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/nxnbkp5g4lsyl88q');
+var connection = mysql.createConnection('mysql://*********:*********@o677vxfi8ok6exrd.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/nxnbkp5g4lsyl88q');
 // var connection = mysql.createConnection({
-// 	host     : 'localhost',
-// 	user     : 'root',
-// 	password : 'password',
-// 	database : 'qiyemingpian'
+//     host     : 'localhost',
+//     user     : '*********',
+//     password : '*********',
+//     database : 'qiyemingpian'
 // });
 //执行创建连接 
 connection.connect();
@@ -58,8 +58,8 @@ router.get('/get_openid',function(req, res, next) {
 		return;
 	}
     //常量可以使用一个模块统一管理
-    var appid = '小程序appid';
-    var secret = '小程序secret';
+    var appid = '********';
+    var secret = '********';
     var wx_url = 'https://api.weixin.qq.com/sns/jscode2session?appid='+appid+'&secret='+secret+'&js_code='+code+'&grant_type=authorization_code';
     superagent.get(wx_url).end(function(err,sres){
     	if(err) {
@@ -147,7 +147,7 @@ router.post('/qiyemingpian_save', function(req, res, next) {
     });
 });
 
-//企业名片删除
+//企业名片删除-暂时不用
 router.post('/qiyemingpian_del', function(req, res, next) {
 	res.json({err:true,msg:'no api'});
 });
@@ -319,7 +319,11 @@ router.post('/qiyemingpian_qrcode', function(req, res, next) {
 	res.json({err:true,msg:'wait develop'});
 });
 //上传logo
+//单文件上传
 router.post('/upload_logo', upload.single('logo'), function(req, res, next) {
+	//req.file是前端文件name=logo的文件信息
+	// 图片会放在uploads目录并且没有后缀，需要自己转存，用到fs模块
+    // 对临时文件转存，fs.rename(oldPath, newPath,callback);
 	fs.rename(req.file.path, './public/upload/images/' + req.file.originalname, function(err) {
         if (err) {
             throw err;

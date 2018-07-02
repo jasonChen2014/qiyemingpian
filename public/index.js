@@ -89,7 +89,7 @@ $(function(){
 			location : '广州天河区',
 			type : 'IT互联网',
 			time : '2017-05-18',
-			imgs : ['1111','2222','3333'],
+			imgs : ['1111','2222','3333','444'],
 			adminname : '陈浩鑫',
 			adminmobile : '18878675646',
 			adminwechat : 'jiushishuai2018',

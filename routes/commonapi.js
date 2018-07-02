@@ -6,12 +6,12 @@ var eventproxy = require('eventproxy');
 //加载mysql模块
 var mysql = require('mysql');
 //创建连接
-var connection = mysql.createConnection('mysql://zuv4mhvs0zr2eaa0:password@o677vxfi8ok6exrd.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/nxnbkp5g4lsyl88q');
+var connection = mysql.createConnection('mysql://*********:*********@o677vxfi8ok6exrd.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/nxnbkp5g4lsyl88q');
 // var connection = mysql.createConnection({
-// 	host     : 'localhost',
-// 	user     : 'root',
-// 	password : 'password',
-// 	database : 'qiyemingpian'
+//     host     : 'localhost',
+//     user     : '*********',
+//     password : '*********',
+//     database : 'qiyemingpian'
 // });
 //执行创建连接 
 connection.connect();
@@ -75,9 +75,6 @@ router.post('/user_info', function(req, res, next) {
 ** param [openid,nickname,avatarUrl,country,province,city,gender]
 */
 router.post('/login', function(req, res, next) {
-	//console.log(req.body);
-	//res.json(req.body);
-	
     //解析请求参数
     //var params = URL.parse(req.url, true).query;
     var params = req.body;
